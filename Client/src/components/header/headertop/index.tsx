@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const HeaderTop = () => {
   return (
@@ -13,9 +14,10 @@ const HeaderTop = () => {
           <button className="bg-primary text-white md:text-lg text-sm md:px-5 px-3 py-1 rounded-3xl hvr-scl-primary">
             Emergency Help!
           </button>
-          <button className="bg-white text-primary border-2 border-primary md:text-lg text-sm md:px-5 px-3 py-[3px] rounded-3xl font-medium hvr-scl-outline">
+    <Link to={"/login"}>      <button className="bg-white text-primary border-2 border-primary md:text-lg text-sm md:px-5 px-3 py-[3px] rounded-3xl font-medium hvr-scl-outline">
             Join us as a Professional
           </button>
+          </Link>
         </div>
       </div>
     </motion.div>

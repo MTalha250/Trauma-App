@@ -10,11 +10,15 @@ import Stories from "./pages/stories";
 import ResourceLibrayDeatil from "./pages/resource-library-details";
 import TherapistChat from "./pages/therapist-chat";
 import ChatRoom from "./pages/chat-room";
+import LoginPage from "./pages/login";
+import SignupPage from "./pages/signup";
 
 const App = () => {
   return (
     <div className="overflow-x-hidden md:overflow-x-visible">
       <Routes>
+      <Route path="/login" element={<LoginPage />} />
+      <Route path="/signup" element={<SignupPage />} />
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="/understanding-trouma" element={<UnderstandingTrouma />} />
@@ -26,6 +30,7 @@ const App = () => {
           <Route path="/about-us" element={<AboutUs />} />
           <Route path="/therapist-chat" element={<TherapistChat />} />
           <Route path="/chat-room" element={<ChatRoom />} />
+        
         </Route>
       </Routes>
     </div>
