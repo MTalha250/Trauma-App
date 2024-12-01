@@ -1,0 +1,48 @@
+[
+    {
+      "name": "Standard",
+      "price": "$75",
+      "duration": "Yearly",
+      "services": 15,
+      "brochures": 3,
+      "articles": 5,
+      "awards": 5,
+      "memberships": 5,
+      "privateChat": true,
+      "bookings": true,
+      "featuredProfile": true,
+      "featuredDays": "100 (days)",
+      "durationDays": 365
+    },
+    {
+      "name": "Premium",
+      "price": "$50",
+      "duration": "Yearly",
+      "services": 15,
+      "brochures": 3,
+      "articles": 5,
+      "awards": 5,
+      "memberships": 5,
+      "privateChat": true,
+      "bookings": true,
+      "featuredProfile": true,
+      "featuredDays": "50 (days)",
+      "durationDays": 365
+    },
+    {
+      "name": "Basic",
+      "price": "$25",
+      "duration": "Monthly",
+      "services": 15,
+      "brochures": 3,
+      "articles": 5,
+      "awards": 5,
+      "memberships": 5,
+      "privateChat": false,
+      "bookings": false,
+      "featuredProfile": false,
+      "featuredDays": "N/A",
+      "durationDays": 30
+    }
+  ]
+  

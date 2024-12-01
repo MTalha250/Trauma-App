@@ -12,6 +12,7 @@ import TherapistChat from "./pages/therapist-chat";
 import ChatRoom from "./pages/chat-room";
 import LoginPage from "./pages/login";
 import SignupPage from "./pages/signup";
+import ConsultantPanel from "./pages/consultant-panel";
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
       <Routes>
       <Route path="/login" element={<LoginPage />} />
       <Route path="/signup" element={<SignupPage />} />
+      <Route path="/consultant-panel/*" element={<ConsultantPanel />} />
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="/understanding-trouma" element={<UnderstandingTrouma />} />
@@ -30,7 +32,6 @@ const App = () => {
           <Route path="/about-us" element={<AboutUs />} />
           <Route path="/therapist-chat" element={<TherapistChat />} />
           <Route path="/chat-room" element={<ChatRoom />} />
-        
         </Route>
       </Routes>
     </div>

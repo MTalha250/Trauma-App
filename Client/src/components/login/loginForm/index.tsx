@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link,useNavigate  } from "react-router-dom";
 import image from "../../../assets/homepagge-get--the-care-banner.png";
 
 // TypeScript types for form data
@@ -12,7 +12,7 @@ interface IFormInput {
 const LoginForm: React.FC = () => {
   const [loginError, setLoginError] = useState<string | null>(null);
   const { register, handleSubmit, formState: { errors } } = useForm<IFormInput>();
-
+  const navigate = useNavigate();
   const onSubmit: SubmitHandler<IFormInput> = (data) => {
     // Predefined admin credentials
     const adminCredentials = {
@@ -25,6 +25,8 @@ const LoginForm: React.FC = () => {
       console.log("Login Successful: Welcome Admin!");
       // Reset error state on success
       setLoginError(null);
+   
+      navigate("/consultant-panel");
       // You can redirect the user to another page (e.g., dashboard) here
       // Example with react-router-dom: history.push("/dashboard");
     } else {
