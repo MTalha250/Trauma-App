@@ -7,10 +7,7 @@ interface ExperienceEducationProps {
   errors: FieldErrors<{ experience: string; education: string }>;
 }
 
-const ExperienceEducation: React.FC<ExperienceEducationProps> = ({
-  register,
-  errors,
-}) => {
+const ExperienceEducation: React.FC<ExperienceEducationProps> = () => {
   const inputClasses = "w-full p-3 border rounded-lg";
   const errorClasses = "text-red-500 text-sm mt-1";
 

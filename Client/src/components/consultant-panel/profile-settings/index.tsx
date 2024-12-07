@@ -3,19 +3,24 @@ import { useForm, SubmitHandler } from "react-hook-form";
 import Sidebar from "./Sidebar";
 import PersonalDetails from "./PersonalDetails";
 import ExperienceEducation from "./ExperienceEducation";
-import { Megaphone } from "lucide-react";
 import AwardsDownloads from "./AwardsDownloads";
 import Registrations from "./Registrations";
 import Gallery from "./Gallery";
 import DefaultLocation from "./DefaultLocation";
+import { Megaphone } from "lucide-react";
+
+interface PersonalDetailsData {
+  gender: string;
+  qualification: string;
+  firstName: string;
+  lastName: string;
+  phone: string;
+  bio?: string;
+  languages?: string[];
+}
 
 interface FormInput {
-  personalDetails: {
-    firstName: string;
-    lastName: string;
-    email: string;
-    phone: string;
-  };
+  personalDetails: PersonalDetailsData;
   experience: string;
   education: string;
 }
@@ -30,10 +35,13 @@ const ProfileSettings: React.FC = () => {
   } = useForm<FormInput>({
     defaultValues: {
       personalDetails: {
+        gender: "",
+        qualification: "",
         firstName: "",
         lastName: "",
-        email: "",
         phone: "",
+        bio: "",
+        languages: [],
       },
       experience: "",
       education: "",
@@ -48,38 +56,47 @@ const ProfileSettings: React.FC = () => {
   const renderContent = () => {
     switch (activeTab) {
       case "Personal Details":
-        return <PersonalDetails register={register} errors={errors} />;
+        return (
+          <PersonalDetails
+            register={register}
+            errors={errors.personalDetails || {}}
+          />
+        );
       case "Experience & Education":
-        return <ExperienceEducation register={register} errors={errors} />;
-        case "Awards & Downloads":
-          return <AwardsDownloads register={register} errors={errors} />;
-          case "Registrations":
-            return <Registrations register={register} errors={errors} />;
-            case "Gallery":
-              return <Gallery register={register} errors={errors} />;
-              case "Default Location":
-                return <DefaultLocation register={register} errors={errors} />;
+        return (
+          <ExperienceEducation
+            register={register}
+            errors={errors as any} // Cast errors to the expected type
+          />
+        );
+      case "Awards & Downloads":
+        return <AwardsDownloads />;
+      case "Registrations":
+        return <Registrations />;
+      case "Gallery":
+        return <Gallery />;
+      case "Default Location":
+        return <DefaultLocation />;
       default:
         return null;
     }
   };
 
-  return (<div className=" p-10 min-h-screen w-3/4"  >
-    <form
-      onSubmit={handleSubmit(onSubmit)}
-      className="flex bg-gray-50  shadow-xl min-h-screen"
-    >
-      {/* Sidebar */}
-      <Sidebar activeTab={activeTab} setActiveTab={setActiveTab} />
+  return (
+    <div className="p-10 min-h-screen w-3/4">
+      <form
+        onSubmit={handleSubmit(onSubmit)}
+        className="flex bg-gray-50 shadow-xl min-h-screen"
+      >
+        {/* Sidebar */}
+        <Sidebar activeTab={activeTab} setActiveTab={setActiveTab} />
 
-      {/* Main Content */}
-      <div className="w-3/4 bg-white py-6 px-12 shadow-md">
-        {renderContent()}
-      </div>
-
-    
-    </form>
-    <div className="mt-6 flex justify-between  items-center bg-white shadow-md rounded-lg p-4">
+        {/* Main Content */}
+        <div className="w-3/4 bg-white py-6 px-12 shadow-md">
+          {renderContent()}
+        </div>
+      </form>
+      <div className="mt-6 flex justify-between items-center bg-white shadow-md rounded-lg p-4">
         {/* Left Section with Icon and Text */}
         <div className="flex items-center space-x-4">
           {/* Icon */}
