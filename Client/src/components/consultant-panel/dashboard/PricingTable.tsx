@@ -28,10 +28,11 @@ const PricingTable: React.FC = () => {
   }, []);
 
   return (
-    <div className="container mx-auto p-6 bg-white rounded-lg shadow-lg">
-      <h2 className="text-2xl font-bold text-center mb-8">Packages</h2>
+    <div className="p-6 bg-gray-100 min-h-screen">
+    <div className=" bg-white p-6 rounded-xl shadow-lg ">
+      <h2 className=" text-left mb-3 font-prata text-xl font-light">Packages</h2>
       <div className="overflow-x-auto">
-        <table className="table-auto w-full border-collapse border">
+        <table className="table-auto w-full ">
           {/* Table Header */}
           <thead>
             <tr className="">
@@ -39,7 +40,7 @@ const PricingTable: React.FC = () => {
               {packages.map((pkg, index) => (
                 <th
                   key={index}
-                  className="border border-gray-300 p-4 text-lg font-bold text-center"
+                  className="border border-gray-300 p-4 font-prata text-xl font-light text-center"
                 >
                   {pkg.name}
                 </th>
@@ -55,9 +56,9 @@ const PricingTable: React.FC = () => {
               {packages.map((pkg, index) => (
                 <td
                   key={index}
-                  className="border border-gray-300 p-4 text-center text-xl font-bold text-primary"
+                  className="border border-gray-300 p-4 text-center text-[2.3rem] font-bold text-primary"
                 >
-                  {pkg.price} <span className="text-sm">/ {pkg.duration}</span>
+                  {pkg.price} <br/> <span className="text-base font-light line-clamp-3 ">\ {pkg.duration}</span>
                 </td>
               ))}
             </tr>
@@ -142,7 +143,8 @@ const PricingTable: React.FC = () => {
           </tbody>
         </table>
       </div>
-    </div>
+    </div></div>
+  
   );
 };
 

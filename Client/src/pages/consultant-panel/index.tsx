@@ -5,6 +5,7 @@ import { sidebarOptions } from "@/data/sidebarOptions";
 import PricingTable from "@/components/consultant-panel/dashboard/PricingTable";
 import Invoices from "@/components/consultant-panel/dashboard/Invoices";
 import ArticleManagement from "@/components/consultant-panel/manageArticles";
+import Navbar from "@/components/consultant-panel/navbar";
 
 const ConsultantPanel: React.FC = () => {
   return (
@@ -13,7 +14,10 @@ const ConsultantPanel: React.FC = () => {
       <Sidebar />
 
       {/* Main Content */}
-      <div className="flex-grow sm:p-6 bg-gray-100 min-h-screen ml-20">
+
+      <div className="flex-grow w-[120px] m-auto min-h-screen ml-20 ">
+        <Navbar/>
+      <div className="  bg-gray-100 ">
         <Routes>
           {sidebarOptions.map((option) => (
             <Route
@@ -32,7 +36,7 @@ const ConsultantPanel: React.FC = () => {
             element={<Navigate to="/consultant-panel/dashboard" />}
           />
         </Routes>
-      </div>
+      </div></div>
     </div>
   );
 };

@@ -6,14 +6,14 @@ import { sidebarOptions } from "@/data/sidebarOptions";
 import { ChevronRight, ChevronLeft, LogOut } from "lucide-react";
 
 const Sidebar: React.FC = () => {
-  const [isOpen, setIsOpen] = useState(true); // State to toggle sidebar
+  const [isOpen, setIsOpen] = useState(false); // State to toggle sidebar
   const location = useLocation(); // Get the current route
 
   return (
-    <div className="flex relative">
+    <div className="flex relative z-50">
       {/* Sidebar */}
       <aside
-        className={`fixed  overflow-hidden  top-0 left-0 h-screen bg-primary text-white transition-all duration-300 ease-in-out ${
+        className={`fixed  overflow-hidden   top-0 left-0 h-screen bg-primary text-white transition-all duration-300 ease-in-out ${
           isOpen ? "w-72" : "w-20"
         }`}
       >
