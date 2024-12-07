@@ -69,7 +69,7 @@ const Dashboard: React.FC = () => {
         <div className="bg-white p-6 rounded-lg shadow-lg flex flex-col items-center text-center">
           <User className="text-primary w-14 h-14 mb-4" />
           <h3 className="text-lg font-semibold">Specialities and Services</h3>
-          <Link to="#" className="text-secondary mt-2  text-sm">
+          <Link to="/consultant-panel/specialities-services" className="text-secondary mt-2  text-sm">
             Specialties and Services
           </Link>
         </div>

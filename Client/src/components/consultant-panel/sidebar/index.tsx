@@ -57,7 +57,7 @@ const Sidebar: React.FC = () => {
         to={item.path}
         className={`flex items-center ${
           isOpen ? "justify-start space-x-4" : "justify-center"
-        } p-3 text-sm transition ${
+        } p-3 text-sm transition-all duration-500 ease-in-out ${
           location.pathname === item.path
             ? "bg-white text-primary"
             : "hover:bg-white hover:text-primary"

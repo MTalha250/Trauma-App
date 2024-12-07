@@ -192,7 +192,7 @@ const ArticleManagement: React.FC = () => {
               <input
                 type="file"
                 {...register("image")}
-                className="w-full p-3 border rounded-lg"
+                className="w-full p-3 border-2 rounded-lg border-dashed"
               />
             </div>
             <div>

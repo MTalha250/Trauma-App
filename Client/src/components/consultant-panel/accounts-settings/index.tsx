@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
-import { Lock } from "lucide-react";
+import { Lock ,Megaphone  } from "lucide-react";
 
 interface IFormInput {
   password?: string;
@@ -10,7 +10,7 @@ interface IFormInput {
 }
 
 const AccountsSettings: React.FC = () => {
-  const [activeTab, setActiveTab] = useState("Delete Account");
+  const [activeTab, setActiveTab] = useState("Security & Settings");
   const {
     register,
     handleSubmit,
@@ -27,7 +27,7 @@ const AccountsSettings: React.FC = () => {
         case "Security & Settings":
             return (
               <div>
-                <h2 className="text-lg font-bold mb-4">Account Security & Settings</h2>
+                <h2 className="text-lg  mb-4 py-2 px-4 bg-gray-50 border-l-4 border-l-primary">Account Security & Settings</h2>
                 <form className="space-y-4">
                   <div className="flex items-center">
                     {/* Toggle Switch */}
@@ -50,7 +50,7 @@ const AccountsSettings: React.FC = () => {
       case "Password":
         return (
           <div>
-            <h2 className="text-lg font-bold mb-4">Change Password</h2>
+            <h2 className="text-lg  mb-4 py-2 px-4 bg-gray-50 border-l-4 border-l-primary">Change Password</h2>
             <form className="space-y-4">
               <div>
                 <label className="block text-sm font-medium">Password</label>
@@ -90,7 +90,7 @@ const AccountsSettings: React.FC = () => {
         case "Email Notification":
             return (
               <div>
-                <h2 className="text-lg font-bold mb-4">Manage Email Notifications</h2>
+                <h2 className="text-lg  mb-4 py-2 px-4 bg-gray-50 border-l-4 border-l-primary">Manage Email Notifications</h2>
                 <p className="text-sm text-gray-500 mb-4">
                   All the emails will be sent to the below email address
                 </p>
@@ -118,7 +118,7 @@ const AccountsSettings: React.FC = () => {
       case "Delete Account":
         return (
           <div>
-            <h2 className="text-lg font-bold mb-4 text-red-500">Delete Account</h2>
+            <h2 className="text-lg  mb-4 py-2 px-4 bg-gray-50 border-l-4 border-l-primary">Delete Account</h2>
             <form className="space-y-4" onSubmit={handleSubmit(onSubmit)}>
               <div className="grid grid-cols-2 gap-4">
                 <div>
@@ -187,18 +187,20 @@ const AccountsSettings: React.FC = () => {
   };
 
   return (
-    <div className="flex min-h-screen bg-gray-50">
+    <div className=" bg-gray-50 p-10 shadow-xl " >
+
+      <div className="flex min-h-screen rounded-lg shadow-xl w-3/4">
       {/* Sidebar */}
-      <div className="w-1/4 bg-white shadow-md">
-        <ul className="p-6 space-y-4">
+      <div className="w-1/3 ">
+        <ul className=" space-y-2 ">
           {["Security & Settings", "Password", "Email Notification", "Delete Account"].map(
             (tab) => (
               <li
                 key={tab}
-                className={`cursor-pointer p-3 rounded-lg text-sm font-medium ${
+                className={`cursor-pointer p-5  text-sm font-medium transition-all duration-700 ${
                   activeTab === tab
-                    ? "bg-primary text-white"
-                    : "hover:bg-gray-200 text-gray-700"
+                    ? "bg-white text-gray-700  shadow-md border-l-4 border-primary"
+                    : "hover:bg-white hover:shadow-md border-l-gray-50 border-l-4 hover:border-primary text-gray-700"
                 }`}
                 onClick={() => setActiveTab(tab)}
               >
@@ -210,19 +212,36 @@ const AccountsSettings: React.FC = () => {
       </div>
 
       {/* Main Content */}
-      <div className="w-3/4 p-6">
-        <div className="bg-white shadow-md rounded-lg p-6">
+      <div className="w-3/4 ">
+        <div className="bg-white  p-6 h-full">
           {renderContent()}
-          <div className="mt-6 flex justify-end">
-            <button
-              onClick={handleSubmit(onSubmit)}
-              className="text-primary border border-primary px-3 py-2 text-sm md:text-base rounded-lg hover:bg-primary hover:text-white transition"
-            >
-              Save & Update
-            </button>
-          </div>
+          
         </div>
       </div>
+   
+          </div>
+    
+          <div className="mt-6 flex justify-between w-3/4 items-center bg-white shadow-md rounded-lg p-4">
+  {/* Left Section with Icon and Text */}
+  <div className="flex items-center space-x-4 ">
+    {/* Icon */}
+ 
+    <Megaphone  className="w-10 h-10 text-gray-400" />
+    {/* Text */}
+    <p className="text-sm md:text-base text-gray-600">
+      Update all the latest changes made by you, by just clicking on Save & Update button.
+    </p>
+  </div>
+
+  {/* Button */}
+  <button
+    onClick={handleSubmit(onSubmit)}
+    className="text-primary border border-primary px-4 py-2 text-sm md:text-base rounded-lg hover:bg-primary hover:text-white transition"
+  >
+    Save & Update
+  </button>
+</div>
+
     </div>
   );
 };

@@ -1,10 +1,11 @@
 // src/data/sidebarOptions.ts
-import { Home, Eye, Settings, Calendar, FileText, DollarSign, Heart } from "lucide-react";
+import { Home, User , Settings, Calendar, FileText, DollarSign, Heart } from "lucide-react";
 import Dashboard from "@/components/consultant-panel/dashboard";
 import AccountsSettings from "@/components/consultant-panel/accounts-settings";
 import SpecialitiesServices from "@/components/consultant-panel/specialitiesServices";
 import ArticleManagement from "@/components/consultant-panel/manageArticles";
 import PayoutSettings from "@/components/consultant-panel/payoutSettings";
+import ProfileSettings from "@/components/consultant-panel/profile-settings";
 
 export const sidebarOptions = [
   {
@@ -12,6 +13,12 @@ export const sidebarOptions = [
     path: "dashboard",
     icon: Home,
     component: Dashboard,
+  },
+  {
+    name: "Profile Settings",
+    path: "profile-settings",
+    icon: User,
+    component: ProfileSettings,
   },
   {
     name: "Manage Articles",
