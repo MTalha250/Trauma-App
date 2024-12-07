@@ -1,86 +1,98 @@
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import DoctorImage from "../../../assets/dr.3.png";
+import BackgroundImage from "../../../assets/sidebar-bg.png"; // Replace with your background image
 import { sidebarOptions } from "@/data/sidebarOptions";
-import { Menu, X } from "lucide-react";
-import { LogOut } from "lucide-react";
+import { ChevronRight, ChevronLeft, LogOut } from "lucide-react";
+
 const Sidebar: React.FC = () => {
-  const [isOpen, setIsOpen] = useState(false); // State to toggle sidebar
+  const [isOpen, setIsOpen] = useState(true); // State to toggle sidebar
   const location = useLocation(); // Get the current route
 
   return (
-    <>
-      {/* Hamburger Menu for Small Screens */}
-      <div className="p-4 bg-primary text-white shadow-md lg:hidden ">
-        <button
-          onClick={() => setIsOpen(!isOpen)}
-          className="focus:outline-none"
-        >
-          {isOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
-      </div>
-
+    <div className="flex relative">
       {/* Sidebar */}
       <aside
-        className={`fixed min-h-screen top-0 left-0 z-50 w-64 bg-primary text-white flex flex-col justify-between  ${
-          isOpen ? "translate-x-0" : "-translate-x-full"
-        } transition-transform lg:translate-x-0 flex flex-col justify-between`}
+        className={`fixed  overflow-hidden  top-0 left-0 h-screen bg-primary text-white transition-all duration-300 ease-in-out ${
+          isOpen ? "w-72" : "w-20"
+        }`}
       >
         {/* Profile Section */}
-        <div className="p-6">
-          <div className="flex flex-col items-center">
-            <img
-              src={DoctorImage} // Replace with actual profile image
-              alt="Profile"
-              className="w-24 h-24 rounded-full shadow-md border-4 border-white"
-            />
-            <h3 className="text-lg font-semibold mt-4">Ava Nguyen</h3>
-            <p className="text-sm opacity-80">@ava-nguyen</p>
-          </div>
-          <div className="mt-8">
-            {/* Dynamic Navigation Items */}
-            <ul className="space-y-4">
-              {sidebarOptions.map((item, index) => (
-                <li key={index}>
-                  <Link
-                    to={item.path}
-                    className={`flex items-center space-x-3 p-3 text-sm rounded-lg transition ${
-                      location.pathname.split("/").pop() === item.path
-                        ? "bg-white text-primary"
-                        : "hover:bg-white hover:text-primary"
-                    }`}
-                    onClick={() => setIsOpen(false)} // Close the sidebar on click
-                  >
-                    <item.icon size={18} />
-                    <span>{item.name}</span>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
+        <div className="relative">
+  {/* Background Container */}
+  
+    <img className=" object-cover w-full h-44" src={BackgroundImage} alt="SidebarBackground" />
+  
 
-        {/* Footer Section */}
-        <footer className="p-6 text-center text-sm opacity-80">
-        <Link
-                    to={"/"}
-                    className={`flex items-center space-x-3 p-3 rounded-lg transition hover:bg-white hover:text-primary`}
-                    onClick={() => setIsOpen(false)} // Close the sidebar on click
-                  >
-                    <LogOut size={18} />
-                    <span>Logout</span>
-                  </Link>
-        </footer>
+  {/* Profile Content */}
+  <div className={` relative ${isOpen ? "left-[0px]" : "left-[1000px] h-32 "}  -mt-10 text-center`}>
+  {/* Circular Profile Image */}
+  <div className="flex justify-center">
+    <div className="w-24 h-24 rounded-full shadow-md border-4 border-white overflow-hidden">
+      <img
+        src={DoctorImage}
+        alt="Profile"
+        className="w-full h-full object-cover"
+      />
+    </div>
+  </div>
+
+  {/* Profile Name and Username */}
+  <div className={` mb-9`}>
+    <h3 className="text-lg font-semibold text-white">Ava Nguyen</h3>
+    <p className="text-sm text-white opacity-80">@ava-nguyen</p>
+  </div>
+</div>
+</div>
+
+
+        {/* Navigation Links */}
+        <ul className="mt-4 border-y border-[#ffffff79]">
+  {sidebarOptions.map((item, index) => (
+    <li
+      key={index}
+      className={`border-b border-[#ffffff79] ${index === sidebarOptions.length - 1 ? "border-b-0" : ""}`}
+    >
+      <Link
+        to={item.path}
+        className={`flex items-center ${
+          isOpen ? "justify-start space-x-4" : "justify-center"
+        } p-3 text-sm transition ${
+          location.pathname === item.path
+            ? "bg-white text-primary"
+            : "hover:bg-white hover:text-primary"
+        }`}
+      >
+        <item.icon size={20} />
+        {isOpen && <span>{item.name}</span>}
+      </Link>
+    </li>
+  ))}
+</ul>
+        {/* Logout Section */}
+        <div className="absolute bottom-4 w-full">
+          <Link
+            to="/logout"
+            className={`flex items-center ${
+              isOpen ? "justify-start space-x-4" : "justify-center"
+            } p-3 text-sm transition hover:bg-white hover:text-primary`}
+          >
+            <LogOut size={20} />
+            {isOpen && <span>Logout</span>}
+          </Link>
+        </div>
       </aside>
 
-      {/* Overlay for small screens */}
-      {isOpen && (
-        <div
-          className="fixed inset-0 bg-black bg-opacity-50 z-40 lg:hidden"
-          onClick={() => setIsOpen(false)}
-        ></div>
-      )}
-    </>
+      {/* Toggle Button */}
+      <button
+        className={`fixed top-36 transition-all duration-300 ease-in-out ${
+          isOpen ? "left-[270px]" : "left-16"
+        } z-50 bg-white text-primary p-1 rounded-md shadow-md`}
+        onClick={() => setIsOpen(!isOpen)}
+      >
+        {isOpen ? <ChevronLeft size={30} /> : <ChevronRight size={30} />}
+      </button>
+    </div>
   );
 };
 

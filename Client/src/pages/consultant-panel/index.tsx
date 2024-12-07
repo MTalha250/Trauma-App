@@ -13,7 +13,7 @@ const ConsultantPanel: React.FC = () => {
       <Sidebar />
 
       {/* Main Content */}
-      <div className="flex-grow sm:p-6 bg-gray-100 min-h-screen ml-0 lg:ml-64">
+      <div className="flex-grow sm:p-6 bg-gray-100 min-h-screen ml-20">
         <Routes>
           {sidebarOptions.map((option) => (
             <Route
