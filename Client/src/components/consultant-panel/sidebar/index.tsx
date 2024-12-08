@@ -72,7 +72,7 @@ const Sidebar: React.FC = () => {
         {/* Logout Section */}
         <div className="absolute bottom-4 w-full">
           <Link
-            to="/logout"
+            to="/"
             className={`flex items-center ${
               isOpen ? "justify-start space-x-4" : "justify-center"
             } p-3 text-sm transition hover:bg-white hover:text-primary`}

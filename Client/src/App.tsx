@@ -23,6 +23,7 @@ const App = () => {
       <Route path="/consultant-panel/*" element={<ConsultantPanel />} />
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
+         
           <Route path="/understanding-trouma" element={<UnderstandingTrouma />} />
           <Route path="/find-a-therapist" element={<FindATherapist />} />
           <Route path="/find-a-therapist/details" element={<FindATherapistDetails />} />

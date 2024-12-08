@@ -12,66 +12,19 @@ const SpecialitiesServices: React.FC = () => {
       ],
     },
     {
-      id: 1,
-      category: "Emergency Medicine",
+      id: 2,
+      category: "Emergency ZZZZ",
       services: [
-        { id: 1, title: "Anesthesiology", price: 76 },
-        { id: 2, title: "Medical Services", price: 434 },
+        { id: 1, title: "AADS", price: 76 },
+        { id: 2, title: "ASDAD", price: 434 },
       ],
     },
     {
-      id: 1,
-      category: "Emergency Medicine",
+      id: 3,
+      category: "Emergency XYZ",
       services: [
-        { id: 1, title: "Anesthesiology", price: 76 },
-        { id: 2, title: "Medical Services", price: 434 },
-      ],
-    },
-    {
-      id: 1,
-      category: "Emergency Medicine",
-      services: [
-        { id: 1, title: "Anesthesiology", price: 76 },
-        { id: 2, title: "Medical Services", price: 434 },
-      ],
-    },
-    {
-      id: 1,
-      category: "Emergency Medicine",
-      services: [
-        { id: 1, title: "Anesthesiology", price: 76 },
-        { id: 2, title: "Medical Services", price: 434 },
-      ],
-    },
-    {
-      id: 1,
-      category: "Emergency Medicine",
-      services: [
-        { id: 1, title: "Anesthesiology", price: 76 },
-        { id: 2, title: "Medical Services", price: 434 },
-      ],
-    },
-    {
-      id: 1,
-      category: "Emergency Medicine",
-      services: [
-        { id: 1, title: "Anesthesiology", price: 76 },
-        { id: 2, title: "Medical Services", price: 434 },
-      ],
-    },{
-      id: 1,
-      category: "Emergency Medicine",
-      services: [
-        { id: 1, title: "Anesthesiology", price: 76 },
-        { id: 2, title: "Medical Services", price: 434 },
-      ],
-    },
-    {
-      id: 1,
-      category: "Emergency Medicine",
-      services: [
-        { id: 1, title: "Anesthesiology", price: 76 },
-        { id: 2, title: "Medical Services", price: 434 },
+        { id: 1, title: "ABC", price: 76 },
+        { id: 2, title: "AA A", price: 434 },
       ],
     },
   ]);
