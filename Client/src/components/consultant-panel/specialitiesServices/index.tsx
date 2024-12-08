@@ -11,6 +11,69 @@ const SpecialitiesServices: React.FC = () => {
         { id: 2, title: "Medical Services", price: 434 },
       ],
     },
+    {
+      id: 1,
+      category: "Emergency Medicine",
+      services: [
+        { id: 1, title: "Anesthesiology", price: 76 },
+        { id: 2, title: "Medical Services", price: 434 },
+      ],
+    },
+    {
+      id: 1,
+      category: "Emergency Medicine",
+      services: [
+        { id: 1, title: "Anesthesiology", price: 76 },
+        { id: 2, title: "Medical Services", price: 434 },
+      ],
+    },
+    {
+      id: 1,
+      category: "Emergency Medicine",
+      services: [
+        { id: 1, title: "Anesthesiology", price: 76 },
+        { id: 2, title: "Medical Services", price: 434 },
+      ],
+    },
+    {
+      id: 1,
+      category: "Emergency Medicine",
+      services: [
+        { id: 1, title: "Anesthesiology", price: 76 },
+        { id: 2, title: "Medical Services", price: 434 },
+      ],
+    },
+    {
+      id: 1,
+      category: "Emergency Medicine",
+      services: [
+        { id: 1, title: "Anesthesiology", price: 76 },
+        { id: 2, title: "Medical Services", price: 434 },
+      ],
+    },
+    {
+      id: 1,
+      category: "Emergency Medicine",
+      services: [
+        { id: 1, title: "Anesthesiology", price: 76 },
+        { id: 2, title: "Medical Services", price: 434 },
+      ],
+    },{
+      id: 1,
+      category: "Emergency Medicine",
+      services: [
+        { id: 1, title: "Anesthesiology", price: 76 },
+        { id: 2, title: "Medical Services", price: 434 },
+      ],
+    },
+    {
+      id: 1,
+      category: "Emergency Medicine",
+      services: [
+        { id: 1, title: "Anesthesiology", price: 76 },
+        { id: 2, title: "Medical Services", price: 434 },
+      ],
+    },
   ]);
   const [newCategoryName, setNewCategoryName] = useState("");
   const [isAddingCategory, setIsAddingCategory] = useState(false);
