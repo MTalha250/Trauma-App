@@ -132,9 +132,9 @@ const PricingTable: React.FC = () => {
             {/* Buy Button Row */}
             <tr>
               <td className="border border-gray-300 p-4"></td>
-              {packages.map((pkg, index) => (
+              {packages.map((_, index) => (
                 <td key={index} className="border border-gray-300 p-4 text-center">
-                  <button className="px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary-dark">
+                  <button className="px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary-dark " >
                     Buy Now
                   </button>
                 </td>

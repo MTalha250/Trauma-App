@@ -1,5 +1,5 @@
 // src/data/sidebarOptions.ts
-import { Home, User , Settings, Calendar, FileText, DollarSign, Heart } from "lucide-react";
+import { Home, User , Settings, Calendar, FileText, DollarSign } from "lucide-react";
 import Dashboard from "@/components/consultant-panel/dashboard";
 import AccountsSettings from "@/components/consultant-panel/accounts-settings";
 import SpecialitiesServices from "@/components/consultant-panel/specialitiesServices";

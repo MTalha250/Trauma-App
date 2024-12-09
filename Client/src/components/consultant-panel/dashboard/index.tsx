@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Package, Heart, FileText, Plus, DollarSign, User } from "lucide-react";
+import { Package, FileText, Plus, DollarSign, User } from "lucide-react";
 import { Link } from "react-router-dom";
 import packagesData from "@/data/appointmentsData.json"; // Import JSON data
 
@@ -87,7 +87,7 @@ const Dashboard: React.FC = () => {
       >
         <div className="flex items-center space-x-4 ">
           {/* Date Section */}
-          <div className="flex flex-col border-r-2 border-r items-cente text-primary  w-16 h-16 justify-center text-center">
+          <div className="flex flex-col border-r-2 items-cente text-primary  w-16 h-16 justify-center text-center">
             <span className="text-2xl font-bold">{appointment.date}</span>
             <span className="text-sm font-light">{appointment.month}</span>
           </div>

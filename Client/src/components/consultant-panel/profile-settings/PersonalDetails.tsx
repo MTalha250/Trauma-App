@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { UseFormRegister, FieldErrors } from "react-hook-form";
-import { Edit3, Trash2 } from "lucide-react";
-interface PersonalDetailsData {
+import { Trash2 } from "lucide-react";
+interface FormInput {
   personalDetails: {
     gender: string;
     qualification: string;
@@ -11,11 +11,13 @@ interface PersonalDetailsData {
     bio?: string;
     languages?: string[];
   };
+  experience: string;
+  education: string;
 }
 
 interface PersonalDetailsProps {
-  register: UseFormRegister<PersonalDetailsData>;
-  errors: FieldErrors<PersonalDetailsData>;
+  register: UseFormRegister<FormInput>;
+  errors: FieldErrors<FormInput>;
 }
 
 

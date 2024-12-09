@@ -8,8 +8,6 @@ interface ExperienceEducationProps {
 }
 
 const ExperienceEducation: React.FC<ExperienceEducationProps> = () => {
-  const inputClasses = "w-full p-3 border rounded-lg";
-  const errorClasses = "text-red-500 text-sm mt-1";
 
   return (
     <div>
