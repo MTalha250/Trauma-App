@@ -69,24 +69,24 @@ const ServiceSection: React.FC<ServiceSectionProps> = ({
           </div>
         ))}
       </div>
-      <div className="flex items-center space-x-4 mt-4">
+      <div className="flex-col flex sm:flex-row gap-4  items-center  mt-4">
         <input
           type="text"
           value={newService.title}
           onChange={(e) => setNewService({ ...newService, title: e.target.value })}
           placeholder="Service title"
-          className="flex-grow p-2 border border-gray-300 rounded-lg"
+          className="w-full max-w-full sm:max-w-52 flex-grow p-2 border border-gray-300 rounded-lg"
         />
         <input
           type="number"
           value={newService.price}
           onChange={(e) => setNewService({ ...newService, price: e.target.value })}
           placeholder="Price"
-          className="w-28 p-2 border border-gray-300 rounded-lg"
+          className= "w-full sm:w-28 p-2 border border-gray-300 rounded-lg"
         />
         <button
           onClick={addService}
-          className="text-primary border border-primary px-3 py-2 rounded-lg hover:bg-primary hover:text-white transition"
+          className="text-primary border border-primary w-fit lg:min-w-28 py-2 px-3 rounded-lg hover:bg-primary hover:text-white transition"
         >
           Add Services
         </button>

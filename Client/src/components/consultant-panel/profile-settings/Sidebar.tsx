@@ -16,7 +16,7 @@ const Sidebar: React.FC<SidebarProps> = ({ activeTab, setActiveTab }) => {
   ];
 
   return (
-    <div className="w-1/4">
+    <div className="w-full md:w-2/6">
       <ul className="space-y-2">
         {tabs.map((tab) => (
           <li

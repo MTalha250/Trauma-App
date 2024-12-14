@@ -214,7 +214,7 @@ const PersonalDetails: React.FC<PersonalDetailsProps> = ({
             >
               Select File
             </label>
-            <span className="text-gray-500 ml-4">
+            <span className="text-gray-500 text-[0.8rem] sm:text-sm ml-4">
               Drop files here to upload
             </span>
           </div>

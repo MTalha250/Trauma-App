@@ -83,16 +83,17 @@ const ProfileSettings: React.FC = () => {
   };
 
   return (
-    <div className="p-10 min-h-screen w-3/4">
+    <div className="p-5 sm:p-10 min-h-screen  w-full lg:w-3/4 ">
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="flex bg-gray-50 shadow-xl min-h-screen"
+        className=" flex-col flex md:flex-row bg-gray-50 shadow-xl min-h-screen"
       >
         {/* Sidebar */}
+      
         <Sidebar activeTab={activeTab} setActiveTab={setActiveTab} />
 
         {/* Main Content */}
-        <div className="w-3/4 bg-white py-6 px-12 shadow-md">
+        <div className=" w-full  bg-white p-6 md:py-6 md:px-12 shadow-md">
           {renderContent()}
         </div>
       </form>

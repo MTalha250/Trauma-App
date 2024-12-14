@@ -83,11 +83,11 @@ const Dashboard: React.FC = () => {
     {appointments.map((appointment) => (
       <div
         key={appointment.id}
-        className="flex justify-between items-center  hover:bg-gray-50 border border-gray-200 pr-5 "
+        className=" flex-col flex sm:flex-row justify-between space-y-5 pb-5  items-center  hover:bg-gray-50 border border-gray-200 pr-0 sm:pr-5 "
       >
-        <div className="flex items-center space-x-4 ">
+        <div className="flex-col flex sm:flex-row items-center space-x-4 w-full sm:w-fit  space-y-4 ">
           {/* Date Section */}
-          <div className="flex flex-col border-r-2 items-cente text-primary  w-16 h-16 justify-center text-center">
+          <div className="flex-col flex border-b-2 sm:border-b-0 sm:border-r-2 items-center text-primary  w-full p-2 sm:p-0 sm:w-16 sm:h-16 justify-center text-center ">
             <span className="text-2xl font-bold">{appointment.date}</span>
             <span className="text-sm font-light">{appointment.month}</span>
           </div>
@@ -112,7 +112,7 @@ const Dashboard: React.FC = () => {
         </div>
         </div>
         {/* View Details Button */}
-        <button className="p-1 md:px-4 md:py-2 text-sm text-primary border border-primary rounded-lg hover:bg-primary hover:text-white transition">
+        <button className="p-2 md:px-4 md:py-2 text-sm text-primary border  border-primary rounded-md hover:bg-primary hover:text-white transition">
           View Details
         </button>
       </div>

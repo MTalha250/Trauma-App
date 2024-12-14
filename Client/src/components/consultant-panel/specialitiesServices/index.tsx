@@ -64,8 +64,8 @@ const SpecialitiesServices: React.FC = () => {
   };
 
   return (
-    <div className="p-8 bg-gray-50 min-h-screen shadow-xl rounded-lg">
-      <div className="w-3/4 bg-white space-y-4">
+    <div className="p-5 sm:p-10 min-h-screen  w-full lg:w-5/6 ">
+      <div className="w-full lg:w-3/4 bg-white space-y-4">
         <div className="px-8 py-4 border-b-[1px]">
           <h2 className="text-lg font-bold">Manage Services</h2>
         </div>
