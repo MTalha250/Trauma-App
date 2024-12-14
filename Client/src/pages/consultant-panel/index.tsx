@@ -15,7 +15,7 @@ const ConsultantPanel: React.FC = () => {
 
       {/* Main Content */}
 
-      <div className="flex-grow w-[120px] m-auto min-h-screen ml-20 ">
+      <div className="flex-grow w-[120px] m-auto min-h-screen sm:ml-12 ">
         <Navbar/>
       <div className="  bg-gray-100 ">
         <Routes>

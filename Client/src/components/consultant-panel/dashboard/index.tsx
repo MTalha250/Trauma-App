@@ -24,7 +24,7 @@ const Dashboard: React.FC = () => {
   return (
     <div className="p-6 bg-gray-100 min-h-screen">
       {/* Info Cards Section */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+      <div className="grid md:grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
         {/* Card 1 */}
         <div className="bg-white p-6 rounded-lg shadow-lg flex flex-col items-center text-center  ">
           <Package className="text-primary w-14 h-14 mb-4" />
