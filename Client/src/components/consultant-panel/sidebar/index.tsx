@@ -14,7 +14,7 @@ const Sidebar: React.FC = () => {
       {/* Sidebar */}
       <aside
         className={`fixed  overflow-hidden   top-0 left-0 h-screen bg-primary text-white transition-all duration-300 ease-in-out ${
-          isOpen ? "w-72" : "w-20"
+          isOpen ? "w-72" : " w-0  sm:w-12"
         }`}
       >
         {/* Profile Section */}
@@ -86,7 +86,7 @@ const Sidebar: React.FC = () => {
       {/* Toggle Button */}
       <button
         className={`fixed top-36 transition-all duration-300 ease-in-out ${
-          isOpen ? "left-[270px]" : "left-16"
+          isOpen ? "left-[270px]" : "left-0 sm:left-10"
         } z-50 bg-white text-primary p-1 rounded-md shadow-md`}
         onClick={() => setIsOpen(!isOpen)}
       >

@@ -1,74 +1,101 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { ShoppingCart, ChevronDown } from "lucide-react"; // Import required icons
+import { ShoppingCart, ChevronDown, Menu, X,LogOut } from "lucide-react"; // Import icons
 import { motion, AnimatePresence } from "framer-motion"; // Importing framer-motion
-import DoctorImage from "../../../assets/dr.3.png"; // Replace with your image path
-
+import DoctorImage from "/src/assets/dr.3.png"; // Replace with your image path
+import { sidebarOptions } from "@/data/sidebarOptions";
 const Navbar: React.FC = () => {
   const [isDropdownOpen, setDropdownOpen] = useState(false); // State to handle dropdown visibility
+  const [isMobileMenuOpen, setMobileMenuOpen] = useState(false); // Mobile menu toggle
 
   return (
     <motion.nav
-      className="bg-white shadow-md w-full flex items-center justify-between px-6 py-4 z-40 relative" // Ensure proper z-index
+      className="bg-white shadow-md w-full  md:flex items-center justify-between px-6 py-4 z-40 relative" // Ensure proper z-index
       initial={{ opacity: 0, y: -20 }} // Starting state
       animate={{ opacity: 1, y: 0 }} // Animation on load
       transition={{ duration: 0.5, ease: "easeInOut" }} // Timing of the animation
     >
       {/* Left Section: Logo */}
       <motion.div
-        className="flex items-center"
+        className="flex pb-3 md:pb-0 items-center"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.2 }}
       >
-        <h1 className="text-lg font-bold text-primary ml-3 heading-5">
+        <h1 className="text-lg font-bold text-primary md:ml-3 heading-5">
           Trauma Support
         </h1>
       </motion.div>
 
       {/* Middle Section: Links */}
       <motion.ul
-        className="hidden lg:flex space-x-8 text-sm font-medium text-gray-700"
-        initial={{ opacity: 0, y: -10 }}
-        animate={{ opacity: 1, y: 0 }}
+        className={`${
+          isMobileMenuOpen ? "block" : "hidden"
+        } absolute top-24 md:top-16 border lg:border-none shadow-md  left-0 w-full lg:w-fit bg-white lg:static lg:space-x-8 lg:text-sm lg:font-medium lg:text-gray-700 lg:bg-transparent lg:shadow-none z-30 lg:flex text-sm font-medium text-gray-700`}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
         transition={{ delay: 0.3, duration: 0.5 }}
       >
-        <li>
-          <Link to="/" className="hover:text-primary transition">
+        
+        <li className="border-b lg:border-none">
+          <Link to="/" className="block    lg:hover:text-primary transition p-3 lg:p-0  ">
             Main
           </Link>
         </li>
-        <li>
-          <Link to="/health-forum" className="hover:text-primary transition">
+        <li className="border-b lg:border-none">
+          <Link
+            to="/health-forum"
+            className="block   lg:hover:text-primary transition p-3 lg:p-0 "
+          >
             Health Forum
           </Link>
         </li>
-        <li>
-          <Link to="/pharmacy-store" className="hover:text-primary transition">
+        <li className="border-b lg:border-none">
+          <Link
+            to="/pharmacy-store"
+            className="block   lg:hover:text-primary transition  p-3 lg:p-0  "
+          >
             Pharmacy & Store
           </Link>
         </li>
-        <li>
-          <Link to="/how-it-works" className="hover:text-primary transition">
+        <li className="border-b lg:border-none">
+          <Link
+            to="/how-it-works"
+            className="block   lg:hover:text-primary transition p-3 lg:p-0  "
+          >
             How It Work?
           </Link>
         </li>
-        <li>
-          <Link to="/pages" className="hover:text-primary transition">
+        <li className="border-b lg:border-none">
+          <Link
+            to="/pages"
+            className="block   lg:hover:text-primary transition p-3 lg:p-0  "
+          >
             Pages
           </Link>
         </li>
       </motion.ul>
 
+
       {/* Right Section: Cart and Profile */}
       <motion.div
-        className="flex items-center space-x-6 relative"
+        className="flex items-center justify-between space-x-6 relative"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.4, duration: 0.5 }}
-      >
+      >{/* Hamburger Icon for Mobile */}
+      <div className="flex gap-5">
+      <div className="lg:hidden flex justify-self-start items-center">
+        <button
+          className="text-primary focus:outline-none"
+          onClick={() => setMobileMenuOpen(!isMobileMenuOpen)}
+        >
+          {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+        </button>
+      </div>
+
         {/* Cart Icon */}
-        <div className="relative">
+        <div className="relative justify-self-start">
           <ShoppingCart size={20} className="text-primary cursor-pointer" />
           <motion.span
             className="absolute -top-2 -right-2 bg-red-500 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full"
@@ -79,7 +106,7 @@ const Navbar: React.FC = () => {
             0
           </motion.span>
         </div>
-
+        </div>
         {/* Profile Dropdown */}
         <motion.div
           className="flex items-center space-x-2 cursor-pointer"
@@ -104,38 +131,51 @@ const Navbar: React.FC = () => {
         <AnimatePresence>
           {isDropdownOpen && (
             <motion.div
-              className="absolute top-12 right-0 bg-white shadow-lg rounded-lg w-48 z-50" // Position the dropdown
+              className="absolute top-12 right-0 flex-col  bg-white shadow-lg rounded-lg w-48 z-50" // Position the dropdown
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
               transition={{ duration: 0.2 }}
             >
-              <ul className="text-sm text-gray-700">
-                <li>
-                  <Link
-                    to="/dashboard"
-                    className="block px-4 py-2 hover:bg-gray-100"
-                  >
-                    Dashboard
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/profile"
-                    className="block px-4 py-2 hover:bg-gray-100"
-                  >
-                    View My Profile
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/logout"
-                    className="block px-4 py-2 hover:bg-gray-100 text-red-500"
-                  >
-                    Logout
-                  </Link>
-                </li>
-              </ul>
+          <motion.ul
+      className={`absolute flex-col lg:border-none shadow-md left-0 w-full lg:w-fit bg-white lg:static  lg:text-sm lg:text-gray-700 lg:bg-transparent lg:shadow-none z-30 lg:flex text-sm  text-gray-700`}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ delay: 0.3, duration: 0.5 }}
+    >
+      {sidebarOptions.map((item, index) => (
+        <li
+          key={index}
+          className={`border-b border-[#ffffff79] ${
+            index === sidebarOptions.length - 1 ? "border-b-0" : ""
+          }`}
+        >
+          <Link
+            to={item.path}
+            className={`flex p-3  transition-all duration-500 ease-in-out ${
+              location.pathname === item.path
+                ? "bg-white text-primary"
+                : "hover:bg-white hover:text-primary"
+            }`}
+          >
+            {item.icon && <item.icon size={20} className="mr-2" />}
+            <span>{item.name}</span>
+          </Link>
+        </li>
+      ))}
+          <li
+       
+          className={`border-b border-[#ffffff79] `}
+        >
+          <Link
+            to={"/logout"}
+            className={`flex p-3  transition-all duration-500 ease-in-out  hover:bg-white hover:text-primary`}
+          >
+          <LogOut size={20} className="mr-2" />
+            <span>Logout</span>
+          </Link>
+        </li>
+    </motion.ul>
             </motion.div>
           )}
         </AnimatePresence>

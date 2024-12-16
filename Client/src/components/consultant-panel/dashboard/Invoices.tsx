@@ -25,13 +25,13 @@ const Invoices: React.FC = () => {
   const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
 
   return (
-    <div className="p-6 bg-gray-100 min-h-screen">
+    <div className="p-2 sm:p-6 bg-gray-100 min-h-screen">
     <div className=" bg-white  rounded-xl shadow-lg pb-5">
       <div className="p-5  border">
       <h2 className="text-left font-prata text-lg font-light ">Invoices</h2>
       </div>
-      <div className="overflow-x-auto p-8">
-        <table className="table-auto w-full border-collapse border-gray-50">
+      <div className="overflow-x-auto p-2 sm:p-8">
+        <table className="table-auto w-full gap-2 border-collapse border-gray-50">
           <thead>
             <tr className="bg-gray-50 ">
               <th className="border p-3 text-primary font-prata text-sm font-bold text-left ">Order ID</th>

@@ -187,11 +187,11 @@ const AccountsSettings: React.FC = () => {
   };
 
   return (
-    <div className=" bg-gray-50 p-10 shadow-xl " >
+      <div className="p-5 sm:p-10 min-h-screen  w-full lg:w-3/4 ">
 
-      <div className="flex min-h-screen rounded-lg shadow-xl w-3/4">
+      <div className=" flex-col flex md:flex-row bg-gray-50 shadow-xl min-h-fit md:min-h-screen">
       {/* Sidebar */}
-      <div className="w-1/3 ">
+      <div className="w-full md:w-2/6">
         <ul className=" space-y-2 ">
           {["Security & Settings", "Password", "Email Notification", "Delete Account"].map(
             (tab) => (
@@ -212,7 +212,7 @@ const AccountsSettings: React.FC = () => {
       </div>
 
       {/* Main Content */}
-      <div className="w-3/4 ">
+      <div className="w-full">
         <div className="bg-white  p-6 h-full">
           {renderContent()}
           
@@ -221,7 +221,7 @@ const AccountsSettings: React.FC = () => {
    
           </div>
     
-          <div className="mt-6 flex justify-between w-3/4 items-center bg-white shadow-md rounded-lg p-4">
+          <div className="mt-6 flex justify-between items-center bg-white shadow-md rounded-lg p-4">
   {/* Left Section with Icon and Text */}
   <div className="flex items-center space-x-4 ">
     {/* Icon */}

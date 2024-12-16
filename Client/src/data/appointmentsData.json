@@ -5,7 +5,7 @@
       "month":"Sep",
       "name": "Buchan",
       "status": "Confirmed",
-      "image":"../../../src/assets/dr.1.png"
+      "image":"/src/assets/dr.1.png"
     },
     {
       "id": 2,
@@ -13,7 +13,7 @@
       "name": "Smith",
       "month":"Jan",
       "status": "Pending",
-       "image":"../../../src/assets/dr.2.png"
+       "image":"/src/assets/dr.2.png"
     },
     {
       "id": 3,
@@ -21,6 +21,6 @@
       "month":"Nov",
       "name": "Jane Doe",
       "status": "Cancelled",
-       "image":"../../../src/assets/dr.3.png"
+       "image":"/src/assets/dr.3.png"
     }
   ]

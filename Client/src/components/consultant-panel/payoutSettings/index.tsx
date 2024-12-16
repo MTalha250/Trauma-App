@@ -15,15 +15,15 @@ const PayoutSettings: React.FC = () => {
   };
 
   return (
-    <div className="p-10 min-h-screen w-3/4">
+    <div className="p-5 sm:p-10 min-h-screen  w-full lg:w-3/4 ">
     <form
      
-      className="flex bg-gray-50 shadow-xl min-h-screen"
+       className=" flex-col flex md:flex-row bg-gray-50 shadow-xl min-h-fit lg:min-h-screen"
     >
   <Sidebar activeTab={activeTab} setActiveTab={setActiveTab} />
 
       {/* Main Content */}
-      <div className="w-3/4  p-6  shadow-md">
+      <div className=" w-full  bg-white p-6 md:py-6 md:px-12 shadow-md">
         {renderContent()}
       </div>
     </form>
