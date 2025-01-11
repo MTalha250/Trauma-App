@@ -1,4 +1,4 @@
-import { Home, Mail, Settings, User, List, Heart, FileText, LogOut } from "lucide-react";
+import { Home, Mail, Settings, User, List, FileText } from "lucide-react";
 import Dashboard from "@/components/patient-panel/dashboard";
 import Inbox from "@/components/patient-panel/inbox";
 import ProfileSettings from "@/components/patient-panel/profile-settings";

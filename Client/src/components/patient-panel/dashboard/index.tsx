@@ -1,26 +1,9 @@
-import React, { useEffect, useState } from "react";
-import { Package, Mail, Plus, DollarSign, User } from "lucide-react";
+import React, { useState } from "react";
+import {Mail } from "lucide-react";
 import { Link } from "react-router-dom";
-import packagesData from "@/data/appointmentsData.json"; // Import JSON data
-
-interface Appointment {
-  id: number;
-  date: string;
-  name: string;
-  month: string;
-  status: string;
-  image: string;
-}
 
 const Dashboard: React.FC = () => {
-  const [appointments, setAppointments] = useState<Appointment[]>([]);
-  const [newMessages, setNewMessages] = useState<number>(0); // State for new messages count
-
-  // Simulate fetching appointments data
-  useEffect(() => {
-    setAppointments(packagesData);
-    setNewMessages(0); // Simulate fetching new messages count (0 for now)
-  }, []);
+  const [newMessages] = useState<number>(0); // State for new messages count
 
   return (
     <div className="p-11 bg-gray-100 min-h-screen">

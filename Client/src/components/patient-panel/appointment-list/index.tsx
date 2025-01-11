@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import Calendar from "react-calendar"; // Assuming you are using a calendar package like 'react-calendar'
+import Calendar, { CalendarProps } from "react-calendar"; // Assuming you are using a calendar package like 'react-calendar'
 import "react-calendar/dist/Calendar.css"; // Calendar CSS
 import AppointmentItem from "./AppointmentItem";
 import "./style.css"; // Import the custom CSS
-
+import { CalendarX } from "lucide-react"; // Import the icon
 interface Appointment {
   id: number;
   date: string;
@@ -38,37 +38,52 @@ const appointmentsData: Appointment[] = [
 ];
 
 const AppointmentList: React.FC = () => {
-  const [selectedDate, setSelectedDate] = useState(new Date());
-  const formattedDate = selectedDate.toISOString().split("T")[0];
+  const [selectedDate, setSelectedDate] = useState<Date | null>(new Date());
+
+  const formattedDate = selectedDate ? selectedDate.toISOString().split("T")[0] : "";
 
   // Filter appointments by the selected date
   const filteredAppointments = appointmentsData.filter(
     (appointment) => appointment.date === formattedDate
   );
 
+  const handleDateChange: CalendarProps["onChange"] = (value) => {
+    if (value instanceof Date) {
+      setSelectedDate(value);
+    } else if (Array.isArray(value) && value.length > 0) {
+      setSelectedDate(value[0]); // Select the first date if it's a range
+    } else {
+      setSelectedDate(null);
+    }
+  };
+
   return (
     <div className="p-6 bg-dullwhite min-h-screen">
       {/* Calendar Section */}
       <div className="bg-white p-6 rounded-lg shadow-md">
-      <div className="p-6 bg-dullwhite rounded-lg shadow-lg">
-      <Calendar
-        onChange={(value: Date) => setSelectedDate(value)}
-        value={selectedDate}
-        className="w-full custom-calendar"
-        tileClassName={({ date, view }) =>
-          view === "month" && date.toDateString() === selectedDate.toDateString()
-            ? "selected-date"
-            : ""
-        }
-      />
-    </div>
+        <div className="p-6 bg-dullwhite rounded-lg shadow-lg">
+          <Calendar
+            onChange={handleDateChange}
+            value={selectedDate}
+            className="w-full custom-calendar"
+            tileClassName={({ date, view }) =>
+              view === "month" &&
+              selectedDate &&
+              date.toDateString() === selectedDate.toDateString()
+                ? "selected-date"
+                : ""
+            }
+          />
+        </div>
         <div className="mt-4 text-center">
           <h3 className="text-xl font-prata text-primary">
             {filteredAppointments.length} Appointments
           </h3>
-          <p className="text-gray-600">
-            {selectedDate.toLocaleDateString("en-US", { dateStyle: "long" })}
-          </p>
+          {selectedDate && (
+            <p className="text-gray-600">
+              {selectedDate.toLocaleDateString("en-US", { dateStyle: "long" })}
+            </p>
+          )}
         </div>
       </div>
 
@@ -84,12 +99,8 @@ const AppointmentList: React.FC = () => {
             ))}
           </ul>
         ) : (
-          <div className="flex flex-col items-center justify-center py-16">
-            <img
-              src="/src/assets/no-appointments.png"
-              alt="No appointments"
-              className="w-24 h-24 mb-4"
-            />
+            <div className="flex flex-col items-center justify-center py-16">
+            <CalendarX className="w-24 h-24 text-gray-400 mb-4" /> {/* Icon instead of image */}
             <p className="text-gray-500 text-sm">
               There are no appointments booked.
             </p>
