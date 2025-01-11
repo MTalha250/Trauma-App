@@ -1,0 +1,109 @@
+:root {
+  --primary-color: #EB6F2D;
+  --secondary-color: #1692BA;
+  --offwhite-color: #F7F7F7;
+  --dullwhite-color: #FBFBFB;
+  --header-bg: #EB6F2D;
+  --header-text: #ffffff;
+  --day-border: rgba(0, 0, 0, 0.1);
+  --selected-day-bg: #ffb74d;
+  --selected-day-text: #ffffff;
+}
+
+.react-calendar {
+  width: 100%;
+  border: none;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: var(--primary-color);
+  color: var(--header-text);
+  font-family: 'Prata', sans-serif;
+}
+
+.react-calendar__navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 16px;
+  background-color: var(--header-bg);
+  color: var(--header-text);
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.react-calendar__month-view__weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  padding: 8px 0;
+  border-bottom: 1px solid var(--day-border);
+  text-align: center;
+  font-weight: bold;
+  color: var(--header-text);
+}
+
+.react-calendar__tile {
+  padding: 15px 0;
+  text-align: center;
+  border: 1px solid var(--day-border);
+  background-color: transparent;
+  color: var(--header-text);
+  transition: background-color 0.3s ease;
+}
+
+.react-calendar__tile:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+}
+
+.react-calendar__tile--now {
+  background-color: var(--secondary-color);
+  color: var(--offwhite-color);
+  border-radius: 4px;
+}
+
+.react-calendar__tile--active {
+  background-color: var(--selected-day-bg);
+  color: var(--selected-day-text);
+  border-radius: 4px;
+}
+
+.react-calendar__tile--active:hover {
+  background-color: rgba(255, 183, 77, 0.8);
+}
+
+.react-calendar__tile--disabled {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.react-calendar__navigation button {
+  background: none;
+  border: none;
+  color: var(--header-text);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.react-calendar__navigation button:disabled {
+  color: rgba(255, 255, 255, 0.5);
+  cursor: not-allowed;
+}
+
+.react-calendar__navigation button:hover:not(:disabled) {
+  color: var(--selected-day-bg);
+}
+.react-calendar__tile--active {
+  background-color: var(--selected-day-bg);
+  color: var(--selected-day-text);
+  border-radius: 4px;
+  opacity: 0.8; /* Lower opacity for active tile */
+}
+
+.react-calendar__tile--active:hover {
+  background-color: rgba(255, 183, 77, 0.6); /* Further reduced opacity on hover */
+}
+
+.react-calendar__tile--hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  opacity: 0.7;
+  transition: opacity 0.3s ease, background-color 0.3s ease;
+}
