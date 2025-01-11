@@ -20,6 +20,13 @@ const LoginForm: React.FC = () => {
       password: "123123",
     };
 
+    // Predefined user credentials
+     const userCredentials = {
+      email: "user@gmail.com",
+      password: "123123",
+    };
+
+
     // Check if the entered credentials match the admin credentials
     if (data.email === adminCredentials.email && data.password === adminCredentials.password) {
       console.log("Login Successful: Welcome Admin!");
@@ -27,9 +34,19 @@ const LoginForm: React.FC = () => {
       setLoginError(null);
    
       navigate("/consultant-panel");
-      // You can redirect the user to another page (e.g., dashboard) here
-      // Example with react-router-dom: history.push("/dashboard");
-    } else {
+    }
+       // Check if the entered credentials match the user credentials
+       if (data.email === userCredentials.email && data.password === userCredentials.password) {
+        console.log("Login Successful: Welcome User!");
+        // Reset error state on success
+        setLoginError(null);
+     
+        navigate("/patient-panel");
+        // You can redirect the user to another page (e.g., dashboard) here
+        // Example with react-router-dom: history.push("/dashboard");
+      }
+    
+    else {
       console.log("Invalid credentials! Please try again.");
       setLoginError("Invalid email or password!");  // Display error message
     }

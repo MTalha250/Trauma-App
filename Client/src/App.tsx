@@ -13,6 +13,7 @@ import ChatRoom from "./pages/chat-room";
 import LoginPage from "./pages/login";
 import SignupPage from "./pages/signup";
 import ConsultantPanel from "./pages/consultant-panel";
+import PatientPanel from "./pages/patient-panel";
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
       <Route path="/login" element={<LoginPage />} />
       <Route path="/signup" element={<SignupPage />} />
       <Route path="/consultant-panel/*" element={<ConsultantPanel />} />
+      <Route path="/patient-panel/*" element={<PatientPanel />} />
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
          

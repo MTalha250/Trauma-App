@@ -1,0 +1,93 @@
+[
+    {
+      "id": 1,
+      "name": "Ava Nguyen",
+      "message": "i have an issue with my health",
+      "image": "/src/assets/dr.2.png",
+      "hasUnreadMessages": true,
+      "chats": [
+        
+        {
+            "id": 6,
+            "text": "Okay, I'll take care of it.",
+            "date": "December 12, 2019",
+            "userImage": "/src/assets/user.jpg",
+            "type": "outgoing"
+          },
+        {
+          "id": 1,
+          "text": "cek",
+          "date": "December 12, 2019",
+          "userImage": "/src/assets/dr.2.png",
+          "type": "incoming"
+        },
+        {
+          "id": 2,
+          "text": "bwjejejejejeheheh 😔",
+          "date": "December 12, 2019",
+          "userImage": "/src/assets/dr.2.png",
+          "type": "incoming"
+        },
+        {
+          "id": 3,
+          "text": "habla cacrón",
+          "date": "December 12, 2019",
+          "userImage": "/src/assets/dr.2.png",
+          "type": "incoming"
+        },
+        {
+          "id": 4,
+          "text": "Okay, I'll take care of it.",
+          "date": "December 12, 2019",
+          "userImage": "/src/assets/user.jpg",
+          "type": "outgoing"
+        },
+        {
+          "id": 5,
+          "text": "I will send you the details soon.",
+          "date": "December 17, 2019",
+          "userImage": "/src/assets/user.jpg",
+          "type": "outgoing"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Flores Emily",
+      "message": "🤔",
+      "image": "/src/assets/dr.1.png",
+      "hasUnreadMessages": true,
+      "chats": [
+        {
+            "id": 2,
+            "text": "I will send you the details soon.",
+            "date": "December 17, 2019",
+            "userImage": "/src/assets/user.jpg",
+            "type": "outgoing"
+          },
+        {
+          "id": 1,
+          "text": "Doc!!",
+          "date": "December 17, 2019",
+          "userImage": "/src/assets/dr.1.png",
+          "type": "incoming"
+        },
+    
+        {
+          "id": 3,
+          "text": "I will send you the details soon.",
+          "date": "December 17, 2019",
+          "userImage": "/src/assets/user.jpg",
+          "type": "outgoing"
+        },
+        {
+            "id": 4,
+            "text": "Doc!!",
+            "date": "December 17, 2019",
+            "userImage": "/src/assets/dr.1.png",
+            "type": "incoming"
+          }
+      ]
+    }
+  ]
+  
