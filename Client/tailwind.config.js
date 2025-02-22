@@ -1,3 +1,5 @@
+import tailwindcssAnimate from "tailwindcss-animate";
+
 /** @type {import('tailwindcss').Config} */
 export default {
   darkMode: ["class"],
@@ -11,8 +13,8 @@ export default {
       colors: {
         primary: "#EB6F2D",
         secondary: "#1692BA",
-        offwhite : "#F7F7F7",
-        dullwhite : "#FBFBFB"
+        offwhite: "#F7F7F7",
+        dullwhite: "#FBFBFB",
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -20,16 +22,16 @@ export default {
         sm: "calc(var(--radius) - 4px)",
       },
     },
-    container : {
-      center : true,
+    container: {
+      center: true,
       padding: {
-        DEFAULT: '1rem',
-        sm: '2rem',
-        lg: '2rem',
-        xl: '3rem',
-        '2xl': '4rem',
+        DEFAULT: "1rem",
+        sm: "2rem",
+        lg: "2rem",
+        xl: "3rem",
+        "2xl": "4rem",
       },
-    }
+    },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [tailwindcssAnimate],
 };
