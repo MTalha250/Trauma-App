@@ -8,6 +8,7 @@ export default {
     extend: {
       fontFamily: {
         prata: ["Prata", "sans-serif"],
+        figtree: ["Figtree", "sans-serif"],
       },
 
       colors: {

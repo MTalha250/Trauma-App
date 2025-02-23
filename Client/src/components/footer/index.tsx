@@ -1,6 +1,6 @@
-import X from "../../assets/X.svg"
-import Fb from "../../assets/fb.svg"
-import LinkedIn from "../../assets/linkedin.svg"
+import X from "../../assets/X.svg";
+import Fb from "../../assets/fb.svg";
+import LinkedIn from "../../assets/linkedin.svg";
 import { motion } from "framer-motion";
 import {} from "lucide-react";
 
@@ -10,10 +10,11 @@ const Footer = () => {
       <div className="container">
         <div className="flex flex-row flex-wrap justify-between items-start font-light py-10 ">
           <motion.div
-           initial={{ opacity: 0, y: 75 }}
-           whileInView={{ opacity: 1, y: 0 }}
-           transition={{ duration: 0.5, delay: 0.25 }}
-          className="flex flex-col justify-center items-start lg:w-[24%] space-y-4 p-5">
+            initial={{ opacity: 0, y: 75 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.25 }}
+            className="flex flex-col justify-center items-start lg:w-[24%] space-y-4 p-5"
+          >
             <h3 className="text-lg lg:text-2xl text-secondary font-bold text-center">
               Trauma Support
             </h3>
@@ -23,21 +24,29 @@ const Footer = () => {
               and confidential support 24/7. If this is an emergency, call 911.
             </p>
             <motion.div
-             initial={{ opacity: 0, x: -75 }}
-             whileInView={{ opacity: 1, x: 0 }}
-             transition={{ duration: 0.5, delay: 0.25 }}
-            className="bg-[#484848] rounded-full px-4 py-2 flex gap-3 w-full justify-between max-w-[300px]">
-              <img src={Fb} alt="facebook"/>
-              <img src={LinkedIn} alt="linkedin"/>
-              <img src={X} alt="twitter"/>
+              initial={{ opacity: 0, x: -75 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: 0.25 }}
+              className="flex gap-3"
+            >
+              <div className="bg-[#484848] rounded-full w-10 h-10 flex justify-center items-center">
+                <img src={Fb} alt="facebook" />
+              </div>
+              <div className="bg-[#484848] rounded-full w-10 h-10 flex justify-center items-center">
+                <img src={LinkedIn} alt="linkedin" />
+              </div>
+              <div className="bg-[#484848] rounded-full w-10 h-10 flex justify-center items-center">
+                <img src={X} alt="twitter" />
+              </div>
             </motion.div>
           </motion.div>
 
           <motion.div
-           initial={{ opacity: 0, x: 75 }}
-           whileInView={{ opacity: 1, x: 0 }}
-           transition={{ duration: 0.9, delay: 0.25 }}
-          className="lg:ms-10 flex flex-col justify-center items-start lg:w-[24%] w-1/2 space-y-4 p-5">
+            initial={{ opacity: 0, x: 75 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.9, delay: 0.25 }}
+            className="lg:ms-10 flex flex-col justify-center items-start lg:w-[24%] w-1/2 space-y-4 p-5"
+          >
             <p className="text-[#484848] font-bold">Get Care</p>
             <ul className="text-[14px] font-light">
               <li>Meical Care</li>
@@ -48,10 +57,11 @@ const Footer = () => {
           </motion.div>
 
           <motion.div
-           initial={{ opacity: 0, y: -75 }}
-           whileInView={{ opacity: 1, y: 0 }}
-           transition={{ duration: 1.1, delay: 0.05 }}
-          className="flex flex-col justify-center items-start lg:w-[24%] w-1/2 space-y-4 p-5">
+            initial={{ opacity: 0, y: -75 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1.1, delay: 0.05 }}
+            className="flex flex-col justify-center items-start lg:w-[24%] w-1/2 space-y-4 p-5"
+          >
             <p className="text-[#484848] font-bold">Providers </p>
             <ul className="text-[14px] font-light">
               <li>Join as Proffessional</li>
@@ -62,10 +72,11 @@ const Footer = () => {
           </motion.div>
 
           <motion.div
-           initial={{ opacity: 0, y: 75, x:50 }}
-           whileInView={{ opacity: 1, y: 0, x:0 }}
-           transition={{ duration: 0.7, delay: 0 }}
-          className="flex flex-col justify-center items-start lg:w-[24%] w-1/2 space-y-4 p-5">
+            initial={{ opacity: 0, y: 75, x: 50 }}
+            whileInView={{ opacity: 1, y: 0, x: 0 }}
+            transition={{ duration: 0.7, delay: 0 }}
+            className="flex flex-col justify-center items-start lg:w-[24%] w-1/2 space-y-4 p-5"
+          >
             <p className="text-[#484848] font-bold">Get Care</p>
             <ul className="text-[14px] font-light">
               <li>Trauma Care</li>
@@ -77,10 +88,11 @@ const Footer = () => {
         </div>
 
         <motion.div
-         initial={{ opacity: 0, y: 10 }}
-         whileInView={{ opacity: 1, y: 0 }}
-         transition={{ duration: 0.5, delay: 0.25 }}
-        className="border-t-2 border-t-[dullwhite] py-2">
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.25 }}
+          className="border-t-2 border-t-[dullwhite] py-2"
+        >
           <p className="text-center font-light text-[14px]">
             Copyright @ 2024 All rights reserved{" "}
           </p>
