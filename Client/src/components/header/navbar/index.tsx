@@ -1,18 +1,15 @@
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import HeaderTop from "../headertop";
-import search from "../../../assets/serch.svg";
 import { Menu, X, ChevronDown, ChevronUp, Search } from "lucide-react";
 
 const Navbar = () => {
-  const [isOpenTrouma, setIsOpenTrouma] = useState(false);
   const [isOpenSupport, setIsOpenSupport] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isHoveringNavbar, setIsHoveringNavbar] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
-    setIsOpenTrouma(false);
     setIsOpenSupport(false);
     setIsMobileMenuOpen(false);
   }, [location]);
@@ -27,7 +24,6 @@ const Navbar = () => {
 
   const handleNavbarMouseLeave = () => {
     setIsHoveringNavbar(false);
-    setIsOpenTrouma(false);
     setIsOpenSupport(false);
   };
 
@@ -66,7 +62,6 @@ const Navbar = () => {
             <ul className="flex space-x-3 text-sm font-medium text-[rgb(61,89,97)]">
               <li
                 onMouseEnter={() => {
-                  setIsOpenTrouma(false);
                   setIsOpenSupport(false);
                 }}
               >
@@ -75,7 +70,6 @@ const Navbar = () => {
               <li className="text-primary">•</li>
               <li
                 onMouseEnter={() => {
-                  setIsOpenTrouma(false);
                   setIsOpenSupport(false);
                 }}
               >
@@ -87,7 +81,6 @@ const Navbar = () => {
                 <div
                   className="flex items-center cursor-pointer"
                   onMouseEnter={() => {
-                    setIsOpenTrouma(false);
                     setIsOpenSupport(true);
                   }}
                   onMouseLeave={() => {
@@ -133,7 +126,6 @@ const Navbar = () => {
               </li>
               <li
                 onMouseEnter={() => {
-                  setIsOpenTrouma(false);
                   setIsOpenSupport(false);
                 }}
               >
