@@ -14,22 +14,32 @@ import LoginPage from "./pages/login";
 import SignupPage from "./pages/signup";
 import ConsultantPanel from "./pages/consultant-panel";
 import PatientPanel from "./pages/patient-panel";
+import Promotion from "./pages/promotion";
 
 const App = () => {
   return (
     <div className="overflow-x-hidden md:overflow-x-visible">
       <Routes>
-      <Route path="/login" element={<LoginPage />} />
-      <Route path="/signup" element={<SignupPage />} />
-      <Route path="/consultant-panel/*" element={<ConsultantPanel />} />
-      <Route path="/patient-panel/*" element={<PatientPanel />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/signup" element={<SignupPage />} />
+        <Route path="/consultant-panel/*" element={<ConsultantPanel />} />
+        <Route path="/patient-panel/*" element={<PatientPanel />} />
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
-         
-          <Route path="/understanding-trouma" element={<UnderstandingTrouma />} />
+          <Route path="/promotion" element={<Promotion />} />
+          <Route
+            path="/understanding-trouma"
+            element={<UnderstandingTrouma />}
+          />
           <Route path="/find-a-therapist" element={<FindATherapist />} />
-          <Route path="/find-a-therapist/details" element={<FindATherapistDetails />} />
-          <Route path="/resource-library/details" element={<ResourceLibrayDeatil />} />
+          <Route
+            path="/find-a-therapist/details"
+            element={<FindATherapistDetails />}
+          />
+          <Route
+            path="/resource-library/details"
+            element={<ResourceLibrayDeatil />}
+          />
           <Route path="/resource-library" element={<ResourcesLibrary />} />
           <Route path="/stories" element={<Stories />} />
           <Route path="/about-us" element={<AboutUs />} />

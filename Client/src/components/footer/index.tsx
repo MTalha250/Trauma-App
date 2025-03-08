@@ -29,13 +29,13 @@ const Footer = () => {
               transition={{ duration: 0.5, delay: 0.25 }}
               className="flex gap-3"
             >
-              <div className="bg-[#484848] rounded-full w-10 h-10 flex justify-center items-center">
+              <div className="bg-[#484848] rounded-full w-8 h-8 p-2.5 flex justify-center items-center">
                 <img src={Fb} alt="facebook" />
               </div>
-              <div className="bg-[#484848] rounded-full w-10 h-10 flex justify-center items-center">
+              <div className="bg-[#484848] rounded-full w-8 h-8 p-2.5 flex justify-center items-center">
                 <img src={LinkedIn} alt="linkedin" />
               </div>
-              <div className="bg-[#484848] rounded-full w-10 h-10 flex justify-center items-center">
+              <div className="bg-[#484848] rounded-full w-8 h-8 p-2.5 flex justify-center items-center">
                 <img src={X} alt="twitter" />
               </div>
             </motion.div>

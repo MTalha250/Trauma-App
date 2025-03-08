@@ -1,24 +1,11 @@
 import Avatar from "../../assets/3d_avatar_16.png";
 import ArticleImage from "../../assets/artical-image.png";
 import { motion } from "framer-motion";
-import img from "@/assets/dr.2.png";
 
 function ResourceLibrayDeatil() {
   return (
     <div className="flex justify-center">
-      <div className="container flex gap-10  my-10 w-full md:w-[85%]">
-        <motion.div
-          initial={{ opacity: 0, x: -75 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.9, delay: 0.25 }}
-          viewport={{ once: true }}
-          className="hidden lg:block w-full h-fit relative"
-        >
-          <img src={img} alt="" className="w-full h-full" />
-          <button className="bg-primary absolute left-1/2 -translate-x-1/2 bottom-5 text-white p-2 shadow whitespace-nowrap">
-            Book Now
-          </button>
-        </motion.div>
+      <div className="container my-10 w-full md:w-[70%]">
         <div>
           <motion.div
             initial={{ opacity: 0, x: 75 }}

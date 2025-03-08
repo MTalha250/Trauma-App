@@ -5,12 +5,12 @@ import Card3 from "../../../assets/stories_card_3.png";
 
 function StoriesCardWrapper() {
   return (
-    <div className="flex flex-wrap gap-8 mb-10 justify-center">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
       <StoriesCard
         image={Card1}
         title={"Finding Strength After the Storm"}
         description={
-          "A journey through loss and the path to rediscovering inner strength and resilience."
+          "A journey through loss and the path to rediscovering inner strength and resilience. A journey through loss and the path to rediscovering inner strength and resilience."
         }
       />
       <StoriesCard
